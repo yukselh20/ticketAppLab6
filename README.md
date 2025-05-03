@@ -4,7 +4,7 @@
 
 ## Overview
 
-This is a console-based Java application that allows you to manage a collection of Ticket objects interactively. The application loads Ticket data from a JSON file at startup, supports a variety of commands to manipulate the collection, and saves changes back to the file. It demonstrates key Java features such as Collections, generics, file I/O, and robust error handling—all implemented following SOLID principles.
+This is a console-based Java application that allows you to manage a collection of Ticket objects interactively. The application loads Ticket data from a JSON file at startup, supports a variety of common.commands to manipulate the collection, and saves changes back to the file. It demonstrates key Java features such as Collections, generics, file I/O, and robust error handling—all implemented following SOLID principles.
 
 ## Features
 
@@ -13,8 +13,8 @@ This is a console-based Java application that allows you to manage a collection 
   - The collection is automatically populated from a JSON file (the file path is specified via the environment variable `TICKET_FILE`).
 
 - **Interactive Command Interface:**  
-  The application supports a range of commands, including:
-  - `help`: Displays a list of available commands.
+  The application supports a range of common.commands, including:
+  - `help`: Displays a list of available common.commands.
   - `info`: Shows details about the collection (type, initialization time, number of elements, etc.).
   - `show`: Lists all Ticket objects.
   - `insert <key> {element}`: Inserts a new Ticket with a specified key.
@@ -22,12 +22,12 @@ This is a console-based Java application that allows you to manage a collection 
   - `remove_key <key>`: Removes a Ticket based on its key.
   - `clear`: Clears the entire collection.
   - `save`: Saves the current collection back to the JSON file.
-  - `execute_script <file_name>`: Reads and executes commands from a script file (commands in the same format as interactive input).
+  - `execute_script <file_name>`: Reads and executes common.commands from a script file (common.commands in the same format as interactive input).
   - `exit`: Exits the application without saving.
 
 - **Input Validation and Robust Error Handling:**  
   - User inputs are rigorously validated using form classes and static factory methods. For instance, only valid Ticket types (e.g., VIP, USUAL, BUDGETARY, CHEAP) are accepted.
-  - Custom exceptions provide clear error messages when inputs do not meet requirements.
+  - Custom common.exceptions provide clear error messages when inputs do not meet requirements.
   
 - **JSON Serialization:**  
   - The application uses Gson for JSON serialization/deserialization.
@@ -84,7 +84,7 @@ This is a console-based Java application that allows you to manage a collection 
   The `Ticket` class implements the `Comparable` interface by overriding `compareTo`, which defines a natural order (e.g., by id). This allows sorting Ticket objects without requiring external comparators.
   
 - **Comparator and Streams:**  
-  In commands like `print_descending`, Java Streams and `Comparator` are used to sort the collection. For example:
+  In common.commands like `print_descending`, Java Streams and `Comparator` are used to sort the collection. For example:
   ```java
   List<Ticket> sorted = collectionManager.getCollection().values().stream()
       .sorted(Comparator.comparing(Ticket::getPrice).reversed())
@@ -148,9 +148,9 @@ This is a console-based Java application that allows you to manage a collection 
 
 ## Command Reference
 
-The following commands are supported:
+The following common.commands are supported:
 
-- **help:** Displays help for all available commands.
+- **help:** Displays help for all available common.commands.
 - **info:** Shows collection metadata (type, initialization time, element count).
 - **show:** Prints all Ticket objects in the collection.
 - **insert `<key>` {element}:** Adds a new Ticket to the collection under the given key.
@@ -158,9 +158,9 @@ The following commands are supported:
 - **remove_key `<key>`:** Removes the Ticket associated with the specified key.
 - **clear:** Clears the entire collection.
 - **save:** Saves the current collection to the JSON file.
-- **execute_script `<file_name>`:** Reads and executes commands from a script file.
+- **execute_script `<file_name>`:** Reads and executes common.commands from a script file.
 - **exit:** Exits the program without saving.
-- Additional commands include: `remove_lower`, `history`, `replace_if_lower`, `count_greater_than_discount`, `filter_starts_with_name`, and `print_descending`.
+- Additional common.commands include: `remove_lower`, `history`, `replace_if_lower`, `count_greater_than_discount`, `filter_starts_with_name`, and `print_descending`.
 
 ## Conclusion
 
